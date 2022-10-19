@@ -30,6 +30,11 @@ export class DragonDetailComponent implements OnInit {
   goBack(): void {
     this.location.back();
   }
+  save(): void {
+    if (this.hero) {
+      this.heroService.updateHero(this.hero).subscribe(() => this.goBack());
+    }
+  }
 }
 
 // This component only receives a hero object
